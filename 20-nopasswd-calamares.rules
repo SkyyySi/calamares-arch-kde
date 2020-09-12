@@ -1,0 +1,8 @@
+/* Allow members of the wheel group to execute the system installer without password authentication. */
+
+polkit.addRule(function(action, subject) {
+    if ((action.id == "com.github.calamares.calamares.pkexec.run") && subject.isInGroup("wheel"))
+    {
+        return polkit.Result.YES;
+    }
+});
