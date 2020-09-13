@@ -53,7 +53,8 @@ build() {
 package() {
 	cd ${srcdir}/calamares/build
 	make DESTDIR="$pkgdir" install
-	cd ${srcdir}/files/
+
+	cd ${srcdir}
 	install -Dm644 "settings.conf" "$pkgdir/etc/calamares/settings.conf"
 	install -Dm644 "20-nopasswd-calamares.rules" "$pkgdir/etc/polkit-1/rules.d/20-nopasswd-calamares.rules"
 }
