@@ -1,6 +1,6 @@
 # Maintainer: SkyyySi
 
-pkgname=calamares-git
+pkgname=calamares-skyyysi-git
 _pkgname=calamares
 pkgver=3.2.25.r38.g91f87ba83
 pkgrel=1
@@ -8,6 +8,8 @@ pkgdesc='Distribution-independent installer framework (with configuration by Sky
 arch=('i686' 'x86_64')
 license=('GPL')
 url='https://calamares.io/'
+provides=('calamares')
+conflicts=('calamares')
 depends=('kconfig'
          'kcoreaddons'
          'kiconthemes'
