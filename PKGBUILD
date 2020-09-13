@@ -36,6 +36,7 @@ source=(
 sha256sums=(
             "SKIP"
             "c9b7cae731437bad71c1387543d85cf658ed14fd112bec003d1b0e28d7e5a364"
+            "62a61ac163e1667804192bd98be0f8871e02b257b33f54a723a62ff03dd09262"
 )
 
 pkgver() {
@@ -47,7 +48,7 @@ build() {
 	cd ${srcdir}/calamares
 	mkdir -p build && cd build
 	cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-	make
+	make -j16
 }
 
 package() {
