@@ -29,7 +29,7 @@ depends=('kconfig'
 )
 source=(
         "calamares::git+https://github.com/calamares/calamares.git#branch=master"
-        "20-nopasswd-calamares.rules"
+        "files"
 )
 
 sha256sums=(
@@ -53,5 +53,5 @@ package() {
 	cd ${srcdir}/calamares/build
 	make DESTDIR="$pkgdir" install
 	install -Dm644 "../settings.conf" "$pkgdir/etc/calamares/settings.conf"
-	install -Dm644 "$srcdir/20-nopasswd-calamares.rules" "$pkgdir/etc/polkit-1/rules.d/20-nopasswd-calamares.rules"
+	install -Dm644 "$srcdir/files/20-nopasswd-calamares.rules" "$pkgdir/etc/polkit-1/rules.d/20-nopasswd-calamares.rules"
 }
